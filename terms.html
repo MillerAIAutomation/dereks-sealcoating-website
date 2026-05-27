@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0A0A0A">
+  <title>Terms of Service | Derek's Sealcoating</title>
+  <meta name="description" content="Terms of Service for Derek's Sealcoating — Montgomery County, PA.">
+  <meta name="robots" content="noindex, follow">
+  <link rel="canonical" href="https://www.dereksealcoating.com/terms.html">
+  <link rel="icon" href="logo.png" type="image/png">
+  <link rel="apple-touch-icon" href="logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;600;700&display=swap">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config={theme:{extend:{colors:{asphalt:{950:'#0A0A0A',900:'#111111',800:'#1A1A1A',700:'#242424',600:'#333333',400:'#777777',200:'#BBBBBB',50:'#F0F0EE'},brand:{600:'#C9A800',500:'#FFD100',400:'#FFE033',100:'#FFFBE6'}},fontFamily:{display:['"Bebas Neue"','Impact','sans-serif'],body:['"DM Sans"','system-ui','sans-serif']}}}}
+  </script>
+  <style>
+    *,*::before,*::after{box-sizing:border-box}
+    html{scroll-behavior:smooth;scroll-padding-top:76px}
+    body{font-family:'DM Sans',system-ui,sans-serif;background:#111111;color:#F0F0EE;margin:0;padding-top:76px}
+    #site-header{position:fixed;top:0;left:0;right:0;z-index:50;height:76px;background:#0A0A0A;border-bottom:2px solid #FFD100;transition:box-shadow 300ms ease}
+    #site-header.elevated{box-shadow:0 4px 32px rgba(0,0,0,.7)}
+    .nav-link{font-family:'DM Sans',sans-serif;font-weight:600;font-size:.875rem;letter-spacing:.06em;text-transform:uppercase;color:#BBBBBB;text-decoration:none;padding:6px 2px;border-bottom:2px solid transparent;transition:color 200ms ease,border-color 200ms ease}
+    .nav-link:hover{color:#FFD100;border-bottom-color:#FFD100}
+    #nav-toggle{display:none}
+    #hamburger{display:none;cursor:pointer;flex-direction:column;gap:5px;padding:6px;background:none;border:none}
+    #hamburger span{display:block;width:24px;height:2px;background:#F0F0EE;transition:transform 280ms cubic-bezier(.34,1.56,.64,1),opacity 200ms ease}
+    #nav-toggle:checked~nav #hamburger span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+    #nav-toggle:checked~nav #hamburger span:nth-child(2){opacity:0;transform:scaleX(0)}
+    #nav-toggle:checked~nav #hamburger span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+    @media(max-width:767px){
+      #hamburger{display:flex}
+      #nav-links{position:absolute;top:100%;left:0;right:0;background:#0A0A0A;border-bottom:2px solid #FFD100;flex-direction:column;padding:1rem 1.25rem 1.5rem;gap:0;transform:translateY(-8px);opacity:0;pointer-events:none;transition:transform 280ms cubic-bezier(.34,1.56,.64,1),opacity 200ms ease}
+      #nav-toggle:checked~nav #nav-links{transform:translateY(0);opacity:1;pointer-events:auto}
+      #nav-links a{padding:.75rem 0;border-bottom:1px solid rgba(255,255,255,.06);font-size:1rem}
+    }
+    .btn-primary{display:inline-flex;align-items:center;gap:8px;background:#FFD100;color:#0A0A0A;font-family:'DM Sans',sans-serif;font-weight:700;font-size:.95rem;padding:.8rem 1.6rem;border-radius:6px;border:none;cursor:pointer;text-decoration:none;letter-spacing:.02em;box-shadow:0 2px 0 #C9A800;transition:transform 200ms cubic-bezier(.34,1.56,.64,1),box-shadow 200ms ease,background 150ms ease}
+    .btn-primary:hover{background:#FFE033;transform:translateY(-2px);box-shadow:0 4px 0 #C9A800}
+    .stripe{height:4px;background:#FFD100}
+    .page-hero{background:#0A0A0A;border-bottom:1px solid rgba(255,255,255,.05);padding:4rem 0 3.5rem;position:relative;overflow:hidden}
+    .page-hero::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;background:#FFD100}
+    .prose h2{font-family:'Bebas Neue',sans-serif;font-size:1.6rem;letter-spacing:.04em;color:#FFD100;margin:2.5rem 0 .75rem}
+    .prose h3{font-family:'DM Sans',sans-serif;font-weight:700;font-size:1rem;color:#F0F0EE;margin:1.5rem 0 .5rem}
+    .prose p{color:#BBBBBB;line-height:1.8;margin-bottom:1rem;font-size:.95rem}
+    .prose ul{color:#BBBBBB;line-height:1.8;margin-bottom:1rem;padding-left:1.25rem;font-size:.95rem}
+    .prose ul li{margin-bottom:.4rem}
+    .prose a{color:#FFD100;text-decoration:none}
+    .prose a:hover{text-decoration:underline}
+    .prose strong{color:#F0F0EE;font-weight:600}
+    .notice{background:#1A1A1A;border:1px solid rgba(255,209,0,.25);border-radius:10px;padding:1.25rem 1.5rem;margin-bottom:2rem}
+    .notice p{margin:0;font-size:.85rem;color:#BBBBBB;line-height:1.7}
+    #btt{position:fixed;bottom:5rem;right:1.25rem;z-index:40;width:42px;height:42px;border-radius:6px;background:#1A1A1A;border:1.5px solid rgba(255,255,255,.12);color:#F0F0EE;cursor:pointer;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity 200ms ease,transform 200ms cubic-bezier(.34,1.56,.64,1);transform:translateY(10px)}
+    #btt.vis{opacity:1;pointer-events:auto;transform:translateY(0)}
+    #btt:hover{border-color:#FFD100;color:#FFD100}
+  </style>
+</head>
+<body>
+
+<header id="site-header">
+  <input type="checkbox" id="nav-toggle">
+  <nav class="max-w-7xl mx-auto px-5 h-full flex items-center justify-between" aria-label="Main navigation">
+    <a href="index.html" class="flex-shrink-0"><img src="logo.png" alt="Derek's Sealcoating" style="height:52px;width:auto;"></a>
+    <ul id="nav-links" class="hidden md:flex items-center gap-8" style="list-style:none;margin:0;padding:0;">
+      <li><a href="index.html" class="nav-link">Home</a></li>
+      <li><a href="services.html" class="nav-link">Services</a></li>
+      <li><a href="our-work.html" class="nav-link">Our Work</a></li>
+      <li><a href="about.html" class="nav-link">About</a></li>
+      <li><a href="contact.html" class="nav-link">Contact</a></li>
+    </ul>
+    <div class="flex items-center gap-3">
+      <a href="contact.html" class="btn-primary hidden md:inline-flex text-sm py-3 px-5">Free Estimate</a>
+      <label for="nav-toggle" id="hamburger" aria-label="Toggle navigation" role="button" tabindex="0"><span></span><span></span><span></span></label>
+    </div>
+  </nav>
+</header>
+
+<div class="md:hidden fixed bottom-0 inset-x-0 z-50">
+  <a href="tel:6106358830" class="flex items-center justify-center gap-3 w-full py-4 bg-brand-500 text-asphalt-950 font-body font-bold text-sm tracking-wide" style="text-decoration:none;">
+    CALL FOR A FREE ESTIMATE — 610-635-8830
+  </a>
+</div>
+
+<main>
+
+<div class="page-hero">
+  <div class="max-w-7xl mx-auto px-5">
+    <p style="font-family:'DM Sans',sans-serif;font-weight:700;font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:#FFD100;" class="mb-3">Legal</p>
+    <h1 class="text-white mb-4" style="font-family:'Bebas Neue',sans-serif;font-size:clamp(3rem,7vw,5.5rem);letter-spacing:.04em;line-height:1;">TERMS OF SERVICE</h1>
+    <p class="font-body text-asphalt-400 text-base">Last updated: May 27, 2026</p>
+  </div>
+</div>
+<div class="stripe"></div>
+
+<section style="background:#111111;padding:4rem 0;">
+  <div class="max-w-3xl mx-auto px-5 prose">
+
+    <div class="notice">
+      <p>These Terms of Service govern your use of the Derek's Sealcoating website and your engagement with our services. By using our website or hiring us for work, you agree to these terms. Please read them carefully.</p>
+    </div>
+
+    <h2>About Derek's Sealcoating</h2>
+    <p>Derek's Sealcoating is a locally owned and operated asphalt maintenance company based in Collegeville, Pennsylvania, serving residential and commercial customers throughout Montgomery County and surrounding areas.</p>
+    <p>
+      18 Longacre Drive, Collegeville, PA 19426<br>
+      Phone: <a href="tel:6106358830">610-635-8830</a><br>
+      Email: <a href="mailto:dereksealcoating@gmail.com">dereksealcoating@gmail.com</a>
+    </p>
+
+    <h2>Services</h2>
+    <p>Derek's Sealcoating provides the following services:</p>
+    <ul>
+      <li>Residential and commercial driveway and parking lot sealcoating</li>
+      <li>Crack sealing and crack filling</li>
+      <li>Pothole and wide crack repair</li>
+      <li>Line striping and sport court marking</li>
+    </ul>
+    <p>All services are subject to availability, weather conditions, and the physical condition of your pavement. We reserve the right to decline or modify a project if site conditions make safe or effective work impossible.</p>
+
+    <h2>Estimates</h2>
+    <p>All estimates provided by Derek's Sealcoating — whether by phone, email, or on-site visit — are free and carry no obligation. Estimates are based on the visible condition of the pavement at the time of assessment. Final pricing may be adjusted if additional damage or conditions are discovered upon arrival that were not apparent during the initial estimate.</p>
+    <p>Estimates are valid for 30 days from the date provided.</p>
+
+    <h2>Scheduling and Weather</h2>
+    <p>Sealcoating requires dry conditions and temperatures above 50°F to cure properly. We reserve the right to reschedule any job due to rain, cold weather, or other conditions that would compromise the quality of the finished product. We will contact you as soon as possible if a reschedule is necessary. No cancellation fees apply for weather-related rescheduling.</p>
+
+    <h2>Customer Responsibilities</h2>
+    <p>To allow us to complete your job properly, you agree to:</p>
+    <ul>
+      <li>Remove all vehicles, personal property, and obstructions from the work area before our crew arrives</li>
+      <li>Ensure the driveway or lot is accessible on the scheduled date</li>
+      <li>Keep pets and children off the work area during and after application until the sealer has cured (24–48 hours for foot traffic, 48–72 hours for vehicles)</li>
+      <li>Notify us of any underground utilities, irrigation heads, or drainage concerns prior to work beginning</li>
+    </ul>
+    <p>Derek's Sealcoating is not responsible for damage resulting from failure to follow post-application care instructions.</p>
+
+    <h2>Payment</h2>
+    <p>Payment is due upon completion of work unless otherwise agreed to in writing. We accept cash, check, credit/debit card, Venmo, and Zelle. Returned checks are subject to a $35 fee. For commercial or large-scale projects, partial deposits or payment schedules may be arranged prior to work beginning.</p>
+
+    <h2>Workmanship Guarantee</h2>
+    <p>We guarantee all workmanship for a minimum of <strong>1 year</strong> from the date of service. If a defect in our application is identified within that period, we will return to assess and address the issue at no charge.</p>
+    <p>This guarantee does not cover:</p>
+    <ul>
+      <li>Normal wear and weathering</li>
+      <li>Damage caused by vehicle fluids (oil, gasoline, transmission fluid) after sealing</li>
+      <li>Structural failures in the underlying pavement not caused by our work</li>
+      <li>Damage resulting from improper use or failure to follow curing instructions</li>
+      <li>Pre-existing conditions disclosed or visible at the time of estimate</li>
+    </ul>
+
+    <h2>Limitation of Liability</h2>
+    <p>Derek's Sealcoating's liability for any claim arising from our services is limited to the amount paid for the specific service in question. We are not liable for indirect, incidental, or consequential damages, including but not limited to lost business, vehicle damage from pre-existing pavement conditions, or third-party claims.</p>
+    <p>We carry general liability insurance. Proof of insurance is available upon request.</p>
+
+    <h2>Website Use</h2>
+    <p>The content on this website — including text, photos, and videos — is the property of Derek's Sealcoating and may not be reproduced without permission. The website is provided for informational purposes. We make reasonable efforts to keep information accurate but make no guarantees regarding completeness or timeliness.</p>
+    <p>Links to third-party websites (Google, social media platforms, etc.) are provided for convenience. We are not responsible for the content or practices of those sites.</p>
+
+    <h2>SMS and Email Communications</h2>
+    <p>By providing your phone number or email address, you consent to receive communications from Derek's Sealcoating related to your service inquiry. For full details on how we handle your information and how to opt out, please see our <a href="privacy.html">Privacy Policy</a>.</p>
+
+    <h2>Governing Law</h2>
+    <p>These Terms of Service are governed by the laws of the Commonwealth of Pennsylvania. Any disputes arising under these terms shall be resolved in the courts of Montgomery County, Pennsylvania.</p>
+
+    <h2>Changes to These Terms</h2>
+    <p>We may update these Terms of Service from time to time. The "Last updated" date at the top of this page will reflect any changes. Continued use of our website or services after changes constitutes acceptance of the updated terms.</p>
+
+    <h2>Contact</h2>
+    <p>Questions about these Terms of Service? Contact us at:</p>
+    <p>
+      <strong>Derek's Sealcoating</strong><br>
+      18 Longacre Drive, Collegeville, PA 19426<br>
+      <a href="tel:6106358830">610-635-8830</a><br>
+      <a href="mailto:dereksealcoating@gmail.com">dereksealcoating@gmail.com</a>
+    </p>
+
+  </div>
+</section>
+
+</main>
+
+<footer style="background:#0A0A0A;border-top:2px solid #FFD100;">
+  <div class="max-w-7xl mx-auto px-5 py-14">
+    <div class="grid md:grid-cols-4 gap-10 mb-10">
+      <div>
+        <img src="logo.png" alt="Derek's Sealcoating" style="height:52px;width:auto;margin-bottom:1rem;" loading="lazy">
+        <address style="font-style:normal;"><p class="font-body text-asphalt-400 text-sm leading-loose">Serving Montgomery County, PA<br><a href="tel:6106358830" class="text-brand-500 font-semibold" style="transition:color 150ms;">610-635-8830</a><br><a href="mailto:dereksealcoating@gmail.com" class="text-asphalt-400 text-sm">dereksealcoating@gmail.com</a></p></address>
+      </div>
+      <div>
+        <h3 class="font-body font-bold text-white text-xs tracking-widest uppercase mb-4">Services</h3>
+        <ul style="list-style:none;padding:0;margin:0;" class="flex flex-col gap-2">
+          <li><a href="services.html#residential-sealcoating" class="font-body text-asphalt-400 hover:text-brand-500 text-sm" style="transition:color 150ms;text-decoration:none;">Residential Sealcoating</a></li>
+          <li><a href="services.html#commercial-sealcoating" class="font-body text-asphalt-400 hover:text-brand-500 text-sm" style="transition:color 150ms;text-decoration:none;">Commercial Sealcoating</a></li>
+          <li><a href="services.html#crack-sealing" class="font-body text-asphalt-400 hover:text-brand-500 text-sm" style="transition:color 150ms;text-decoration:none;">Crack Sealing</a></li>
+          <li><a href="services.html#pothole-repair" class="font-body text-asphalt-400 hover:text-brand-500 text-sm" style="transition:color 150ms;text-decoration:none;">Pothole Repair</a></li>
+          <li><a href="services.html#line-striping" class="font-body text-asphalt-400 hover:text-brand-500 text-sm" style="transition:color 150ms;text-decoration:none;">Line Striping</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="font-body font-bold text-white text-xs tracking-widest uppercase mb-4">Company</h3>
+        <ul style="list-style:none;padding:0;margin:0;" class="flex flex-col gap-2">
+          <li><a href="our-work.html" class="font-body text-asphalt-400 hover:text-brand-500 text-sm" style="transition:color 150ms;text-decoration:none;">Our Work</a></li>
+          <li><a href="about.html" class="font-body text-asphalt-400 hover:text-brand-500 text-sm" style="transition:color 150ms;text-decoration:none;">About Us</a></li>
+          <li><a href="contact.html" class="font-body text-asphalt-400 hover:text-brand-500 text-sm" style="transition:color 150ms;text-decoration:none;">Free Estimate</a></li>
+          <li><a href="privacy.html" class="font-body text-asphalt-400 hover:text-brand-500 text-sm" style="transition:color 150ms;text-decoration:none;">Privacy Policy</a></li>
+          <li><a href="terms.html" class="font-body text-asphalt-400 hover:text-brand-500 text-sm" style="transition:color 150ms;text-decoration:none;">Terms of Service</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="font-body font-bold text-white text-xs tracking-widest uppercase mb-4">Connect</h3>
+        <p class="font-body text-asphalt-600 text-xs font-semibold tracking-widest uppercase mb-1">Hours</p>
+        <p class="font-body text-asphalt-400 text-sm mb-5">Available 7 Days a Week</p>
+        <p class="font-body text-asphalt-600 text-xs font-semibold tracking-widest uppercase mb-1">We Accept</p>
+        <p class="font-body text-asphalt-400 text-sm">Cash · Check · Card · Venmo · Zelle</p>
+      </div>
+    </div>
+    <div style="border-top:1px solid rgba(255,255,255,.06);padding-top:1.5rem;display:flex;flex-wrap:wrap;gap:1rem;justify-content:space-between;">
+      <p class="font-body text-asphalt-600 text-xs">&copy; <span id="yr"></span> Derek's Sealcoating. All rights reserved. Serving Montgomery County, PA.</p>
+      <div class="flex gap-4">
+        <a href="privacy.html" class="font-body text-asphalt-600 text-xs hover:text-brand-500" style="text-decoration:none;transition:color 150ms;">Privacy Policy</a>
+        <a href="terms.html" class="font-body text-asphalt-600 text-xs hover:text-brand-500" style="text-decoration:none;transition:color 150ms;">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<button id="btt" aria-label="Back to top"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="18 15 12 9 6 15"/></svg></button>
+<script>
+  document.getElementById('yr').textContent=new Date().getFullYear();
+  var h=document.getElementById('site-header');
+  window.addEventListener('scroll',function(){h.classList.toggle('elevated',window.scrollY>60)},{passive:true});
+  var tog=document.getElementById('nav-toggle');
+  document.querySelectorAll('#nav-links a').forEach(function(a){a.addEventListener('click',function(){if(tog)tog.checked=false})});
+  var b=document.getElementById('btt');
+  window.addEventListener('scroll',function(){b.classList.toggle('vis',window.scrollY>400)},{passive:true});
+  b.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})});
+</script>
+</body>
+</html>
