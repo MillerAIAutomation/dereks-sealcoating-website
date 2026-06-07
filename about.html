@@ -23,6 +23,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config={theme:{extend:{colors:{asphalt:{950:'#0A0A0A',900:'#111111',800:'#1A1A1A',700:'#242424',600:'#333333',400:'#777777',200:'#BBBBBB',50:'#F0F0EE'},brand:{600:'#C9A800',500:'#FFD100',400:'#FFE033',100:'#FFFBE6'}},fontFamily:{display:['"Bebas Neue"','Impact','sans-serif'],body:['"DM Sans"','system-ui','sans-serif']}}}}
@@ -212,14 +213,7 @@
         <p class="font-body text-asphalt-400 text-base leading-relaxed mb-8">
           We serve residential and commercial customers throughout Montgomery County and neighboring areas of southeastern Pennsylvania. No job is too small or too large — from single driveways to multi-lot commercial properties.
         </p>
-        <div style="background:#1A1A1A;border:1px solid rgba(255,255,255,.07);border-radius:12px;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;">
-          <!-- Replace this block with a Google Maps embed:
-               Go to maps.google.com > search your area > Share > Embed a map > copy the iframe -->
-          <div class="text-center px-8">
-            <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#333" stroke-width="1.5" class="mx-auto mb-3" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            <p class="font-body text-asphalt-600 text-sm">Paste your Google Maps embed here</p>
-          </div>
-        </div>
+        <div id="service-map" style="border-radius:12px;overflow:hidden;aspect-ratio:4/3;min-height:320px;border:1px solid rgba(255,209,0,.18);"></div>
       </div>
       <!-- Town list -->
       <div>
@@ -325,6 +319,48 @@
 </footer>
 
 <button id="btt" aria-label="Back to top"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="18 15 12 9 6 15"/></svg></button>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV/XN/WPbA=" crossorigin=""></script>
+<script>
+  // Service area map — centered on Collegeville, PA
+  var map = L.map('service-map', {
+    center: [40.189, -75.452],
+    zoom: 10,
+    zoomControl: true,
+    scrollWheelZoom: false,
+    attributionControl: true
+  });
+
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright" style="color:#FFD100;">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions" style="color:#FFD100;">CARTO</a>',
+    subdomains: 'abcd',
+    maxZoom: 19
+  }).addTo(map);
+
+  // Service area circle — ~20 mile radius from Collegeville
+  L.circle([40.189, -75.452], {
+    color: '#FFD100',
+    fillColor: '#FFD100',
+    fillOpacity: 0.10,
+    weight: 2,
+    opacity: 0.6,
+    radius: 32186
+  }).addTo(map);
+
+  // Home base marker
+  var dotIcon = L.divIcon({
+    html: '<div style="width:14px;height:14px;background:#FFD100;border:3px solid #0A0A0A;border-radius:50%;box-shadow:0 0 0 2px #FFD100,0 0 12px rgba(255,209,0,.5);"></div>',
+    className: '',
+    iconSize: [14, 14],
+    iconAnchor: [7, 7],
+    popupAnchor: [0, -10]
+  });
+  L.marker([40.189, -75.452], {icon: dotIcon}).addTo(map)
+    .bindPopup('<div style="font-family:DM Sans,sans-serif;color:#0A0A0A;"><strong>Derek\'s Sealcoating</strong><br><span style="font-size:.8rem;">Collegeville, PA 19426</span></div>');
+
+  // Style the attribution control to match dark theme
+  var attrib = document.querySelector('.leaflet-control-attribution');
+  if(attrib) attrib.style.cssText = 'background:rgba(10,10,10,.8);color:#777;font-size:10px;';
+</script>
 <script>
   document.getElementById('yr').textContent=new Date().getFullYear();
   var h=document.getElementById('site-header');
