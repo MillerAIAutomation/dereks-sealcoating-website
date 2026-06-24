@@ -83,7 +83,7 @@
     .t-slide{display:none}
     .t-slide.active{display:block;animation:fadeUp 350ms cubic-bezier(.34,1.56,.64,1) forwards}
     @keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
-    .dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.2);border:none;cursor:pointer;padding:0;transition:background 200ms ease,transform 200ms ease}
+    .dot{width:8px;height:8px;border-radius:50%;background:rgba(0,0,0,.2);border:none;cursor:pointer;padding:0;transition:background 200ms ease,transform 200ms ease}
     .dot.active,.dot:hover{background:#FFD100;transform:scale(1.4)}
     /* Back to top */
     #btt{position:fixed;bottom:5rem;right:1.25rem;z-index:40;width:42px;height:42px;border-radius:6px;background:#1A1A1A;border:1.5px solid rgba(255,255,255,.12);color:#F0F0EE;cursor:pointer;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity 200ms ease,transform 200ms cubic-bezier(.34,1.56,.64,1);transform:translateY(10px)}
@@ -167,7 +167,7 @@
       <p class="text-white mb-6" style="font-family:'Bebas Neue',sans-serif;font-size:clamp(1.4rem,3vw,2.25rem);letter-spacing:.06em;line-height:1.1;opacity:.85;">
         Expert Driveway &amp; Parking Lot Sealing
       </p>
-      <p class="font-body text-asphalt-200 text-lg md:text-xl mb-10" style="line-height:1.7;max-width:500px;">
+      <p class="font-body text-white text-lg md:text-xl mb-10" style="line-height:1.7;max-width:500px;opacity:.92;">
         A local Montgomery County crew — owner operated, small business, and proud of it. We take every job personally and won't rest until every customer is happy with the result.
       </p>
       <div class="flex flex-wrap gap-4">
@@ -335,19 +335,19 @@
 </section>
 
 <!-- TESTIMONIALS -->
-<section aria-labelledby="test-h2" style="background:#111111;padding:5rem 0;border-top:1px solid rgba(255,255,255,.05);">
+<section aria-labelledby="test-h2" style="background:#ffffff;padding:5rem 0;border-top:1px solid rgba(0,0,0,.08);">
   <div class="max-w-4xl mx-auto px-5">
     <div class="text-center mb-12">
       <p class="eyebrow mb-2">40+ Five-Star Google Reviews</p>
-      <h2 id="test-h2" class="text-white" style="font-size:clamp(2.5rem,5vw,4rem);">WHAT CUSTOMERS SAY</h2>
+      <h2 id="test-h2" style="font-size:clamp(2.5rem,5vw,4rem);color:#111111;">WHAT CUSTOMERS SAY</h2>
     </div>
     <div style="position:relative;display:flex;align-items:center;gap:1rem;">
-      <button id="t-prev" aria-label="Previous review" style="flex-shrink:0;width:42px;height:42px;border-radius:50%;background:#1A1A1A;border:1.5px solid rgba(255,255,255,.15);color:#F0F0EE;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:border-color 200ms,color 200ms;" onmouseover="this.style.borderColor='#FFD100';this.style.color='#FFD100'" onmouseout="this.style.borderColor='rgba(255,255,255,.15)';this.style.color='#F0F0EE'">
+      <button id="t-prev" aria-label="Previous review" style="flex-shrink:0;width:42px;height:42px;border-radius:50%;background:#f0f0f0;border:1.5px solid rgba(0,0,0,.12);color:#333333;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:border-color 200ms,color 200ms;" onmouseover="this.style.borderColor='#FFD100';this.style.color='#FFD100'" onmouseout="this.style.borderColor='rgba(0,0,0,.12)';this.style.color='#333333'">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
       </button>
     <div id="t-track" style="flex:1;min-width:0;">
       <div class="t-slide active">
-        <div class="card" style="padding:2.25rem;text-align:center;">
+        <div class="card" style="padding:2.25rem;text-align:center;background:#ffffff;border-color:rgba(0,0,0,.1);">
           <div class="flex justify-center gap-1 mb-5" aria-label="5 stars">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="#FFD100" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
             <svg width="18" height="18" viewBox="0 0 24 24" fill="#FFD100" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
@@ -355,13 +355,13 @@
             <svg width="18" height="18" viewBox="0 0 24 24" fill="#FFD100" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
             <svg width="18" height="18" viewBox="0 0 24 24" fill="#FFD100" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
           </div>
-          <p class="font-body text-asphalt-200 text-lg italic mb-6" style="line-height:1.7;">"Couldn't have asked for a better experience. He called me back in under 10 minutes and was at the house within an hour. I've had my driveway treated multiple times before but nothing ever came close to the quality of this time. Our driveway looks better than it did when it was brand new!"</p>
-          <p class="font-body font-semibold text-white text-sm">Jay Niblick</p>
-          <p class="font-body text-asphalt-400 text-xs mt-1">★★★★★ Google Review</p>
+          <p class="font-body text-lg italic mb-6" style="line-height:1.7;color:#333333;">"Couldn't have asked for a better experience. He called me back in under 10 minutes and was at the house within an hour. I've had my driveway treated multiple times before but nothing ever came close to the quality of this time. Our driveway looks better than it did when it was brand new!"</p>
+          <p class="font-body font-semibold text-sm" style="color:#111111;">Jay Niblick</p>
+          <p class="font-body text-xs mt-1" style="color:#888888;">★★★★★ Google Review</p>
         </div>
       </div>
       <div class="t-slide">
-        <div class="card" style="padding:2.25rem;text-align:center;">
+        <div class="card" style="padding:2.25rem;text-align:center;background:#ffffff;border-color:rgba(0,0,0,.1);">
           <div class="flex justify-center gap-1 mb-5" aria-label="5 stars">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="#FFD100" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
             <svg width="18" height="18" viewBox="0 0 24 24" fill="#FFD100" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
@@ -369,13 +369,13 @@
             <svg width="18" height="18" viewBox="0 0 24 24" fill="#FFD100" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
             <svg width="18" height="18" viewBox="0 0 24 24" fill="#FFD100" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
           </div>
-          <p class="font-body text-asphalt-200 text-lg italic mb-6" style="line-height:1.7;">"Derek was responsive on follow up and quick with producing the estimate. His work was meticulous from the prep work to the final product. Definitely would recommend to others."</p>
-          <p class="font-body font-semibold text-white text-sm">Shawn Foran</p>
-          <p class="font-body text-asphalt-400 text-xs mt-1">★★★★★ Google Review</p>
+          <p class="font-body text-lg italic mb-6" style="line-height:1.7;color:#333333;">"Derek was responsive on follow up and quick with producing the estimate. His work was meticulous from the prep work to the final product. Definitely would recommend to others."</p>
+          <p class="font-body font-semibold text-sm" style="color:#111111;">Shawn Foran</p>
+          <p class="font-body text-xs mt-1" style="color:#888888;">★★★★★ Google Review</p>
         </div>
       </div>
       <div class="t-slide">
-        <div class="card" style="padding:2.25rem;text-align:center;">
+        <div class="card" style="padding:2.25rem;text-align:center;background:#ffffff;border-color:rgba(0,0,0,.1);">
           <div class="flex justify-center gap-1 mb-5" aria-label="5 stars">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="#FFD100" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
             <svg width="18" height="18" viewBox="0 0 24 24" fill="#FFD100" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
@@ -383,13 +383,13 @@
             <svg width="18" height="18" viewBox="0 0 24 24" fill="#FFD100" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
             <svg width="18" height="18" viewBox="0 0 24 24" fill="#FFD100" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
           </div>
-          <p class="font-body text-asphalt-200 text-lg italic mb-6" style="line-height:1.7;">"Derek did a great job for us at a reasonable price for our driveway. Proud to support a young entrepreneur that knows how to hustle."</p>
-          <p class="font-body font-semibold text-white text-sm">Eric Strohl</p>
-          <p class="font-body text-asphalt-400 text-xs mt-1">★★★★★ Google Review</p>
+          <p class="font-body text-lg italic mb-6" style="line-height:1.7;color:#333333;">"Derek did a great job for us at a reasonable price for our driveway. Proud to support a young entrepreneur that knows how to hustle."</p>
+          <p class="font-body font-semibold text-sm" style="color:#111111;">Eric Strohl</p>
+          <p class="font-body text-xs mt-1" style="color:#888888;">★★★★★ Google Review</p>
         </div>
       </div>
       <div class="t-slide">
-        <div class="card" style="padding:2.25rem;text-align:center;">
+        <div class="card" style="padding:2.25rem;text-align:center;background:#ffffff;border-color:rgba(0,0,0,.1);">
           <div class="flex justify-center gap-1 mb-5" aria-label="5 stars">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="#FFD100" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
             <svg width="18" height="18" viewBox="0 0 24 24" fill="#FFD100" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
@@ -397,13 +397,13 @@
             <svg width="18" height="18" viewBox="0 0 24 24" fill="#FFD100" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
             <svg width="18" height="18" viewBox="0 0 24 24" fill="#FFD100" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
           </div>
-          <p class="font-body text-asphalt-200 text-lg italic mb-6" style="line-height:1.7;">"Great work. Great price. Was on vacation when it was done and Derek sent me a video of the finished job and met with me when I got back to answer any questions."</p>
-          <p class="font-body font-semibold text-white text-sm">Paul Schiele</p>
-          <p class="font-body text-asphalt-400 text-xs mt-1">★★★★★ Google Review</p>
+          <p class="font-body text-lg italic mb-6" style="line-height:1.7;color:#333333;">"Great work. Great price. Was on vacation when it was done and Derek sent me a video of the finished job and met with me when I got back to answer any questions."</p>
+          <p class="font-body font-semibold text-sm" style="color:#111111;">Paul Schiele</p>
+          <p class="font-body text-xs mt-1" style="color:#888888;">★★★★★ Google Review</p>
         </div>
       </div>
     </div>
-      <button id="t-next" aria-label="Next review" style="flex-shrink:0;width:42px;height:42px;border-radius:50%;background:#1A1A1A;border:1.5px solid rgba(255,255,255,.15);color:#F0F0EE;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:border-color 200ms,color 200ms;" onmouseover="this.style.borderColor='#FFD100';this.style.color='#FFD100'" onmouseout="this.style.borderColor='rgba(255,255,255,.15)';this.style.color='#F0F0EE'">
+      <button id="t-next" aria-label="Next review" style="flex-shrink:0;width:42px;height:42px;border-radius:50%;background:#f0f0f0;border:1.5px solid rgba(0,0,0,.12);color:#333333;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:border-color 200ms,color 200ms;" onmouseover="this.style.borderColor='#FFD100';this.style.color='#FFD100'" onmouseout="this.style.borderColor='rgba(0,0,0,.12)';this.style.color='#333333'">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
       </button>
     </div>
