@@ -74,6 +74,13 @@
     #btt.vis{opacity:1;pointer-events:auto;transform:translateY(0)}
     #btt:hover{border-color:#FFD100;color:#FFD100}
     #btt:focus-visible{outline:2px solid #FFD100;outline-offset:3px}@media(max-width:767px){#btt{bottom:6.5rem}}
+    /* Honeypot */
+    .hp-field{position:absolute;left:-9999px;width:0;height:0;overflow:hidden;}
+    /* Select custom arrow */
+    .finput-select{appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23777777' stroke-width='2.5'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 1rem center;padding-right:2.5rem;cursor:pointer;}
+    .finput-select option{background:#242424;color:#F0F0EE;}
+    /* Spinner */
+    @keyframes spin{to{transform:rotate(360deg)}}
   </style>
 </head>
 <body>
@@ -188,24 +195,92 @@
 
       <!-- RIGHT: Form -->
       <div class="md:col-span-3">
-        <div class="form-wrap" style="padding:0;overflow:hidden;min-height:884px;">
-          <iframe
-            src="https://api.leadconnectorhq.com/widget/form/kzGe48LquebMkskYtLXk"
-            style="width:100%;height:884px;border:none;border-radius:4px;display:block;"
-            id="inline-kzGe48LquebMkskYtLXk"
-            data-layout="{'id':'INLINE'}"
-            data-trigger-type="alwaysShow"
-            data-trigger-value=""
-            data-activation-type="alwaysActivated"
-            data-activation-value=""
-            data-deactivation-type="neverDeactivate"
-            data-deactivation-value=""
-            data-form-name="Contact Us"
-            data-height="884"
-            data-layout-iframe-id="inline-kzGe48LquebMkskYtLXk"
-            data-form-id="kzGe48LquebMkskYtLXk"
-            title="Contact Us — Derek's Sealcoating Free Estimate Form">
-          </iframe>
+        <div class="form-wrap" id="form-container">
+
+          <!-- Success state (shown after successful submit) -->
+          <div id="form-success" style="display:none;text-align:center;padding:3rem 1rem;">
+            <div style="width:64px;height:64px;border-radius:50%;background:rgba(34,197,94,.12);border:2px solid #22c55e;display:flex;align-items:center;justify-content:center;margin:0 auto 1.5rem;">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <h3 style="font-family:'Bebas Neue',sans-serif;font-size:2rem;letter-spacing:.04em;color:#F0F0EE;margin:0 0 .75rem;">REQUEST SENT!</h3>
+            <p class="font-body text-asphalt-400" style="line-height:1.7;max-width:380px;margin:0 auto 1.5rem;">Thanks — we'll get back to you within <strong style="color:#FFD100;">24 hours</strong> to schedule your free on-site estimate. No obligation.</p>
+            <p class="font-body text-asphalt-400 text-sm">Need something sooner? <a href="tel:6106358830" style="color:#FFD100;text-decoration:none;font-weight:600;">Call us at 610-635-8830.</a></p>
+          </div>
+
+          <form id="contact-form" novalidate aria-label="Free estimate request form">
+            <p class="eyebrow mb-2">Free Estimate Request</p>
+            <h2 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(1.8rem,3vw,2.4rem);letter-spacing:.04em;line-height:1;color:#F0F0EE;margin:0 0 1.75rem;">GET YOUR FREE QUOTE</h2>
+
+            <!-- Honeypot (invisible to humans, filled by bots) -->
+            <div class="hp-field" aria-hidden="true">
+              <label for="f-website">Website</label>
+              <input type="text" id="f-website" name="website" tabindex="-1" autocomplete="off">
+            </div>
+
+            <!-- Name + Phone row -->
+            <div class="grid md:grid-cols-2 gap-4 mb-4">
+              <div>
+                <label class="flabel" for="f-name">Full Name <span aria-hidden="true" style="color:#ef4444;">*</span></label>
+                <input type="text" id="f-name" name="name" class="finput" placeholder="John Smith" autocomplete="name" required aria-required="true" aria-describedby="err-name">
+                <span class="ferr" id="err-name" role="alert" aria-live="polite"></span>
+              </div>
+              <div>
+                <label class="flabel" for="f-phone">Phone Number <span aria-hidden="true" style="color:#ef4444;">*</span></label>
+                <input type="tel" id="f-phone" name="phone" class="finput" placeholder="(610) 555-0100" autocomplete="tel" required aria-required="true" aria-describedby="err-phone">
+                <span class="ferr" id="err-phone" role="alert" aria-live="polite"></span>
+              </div>
+            </div>
+
+            <!-- Email -->
+            <div class="mb-4">
+              <label class="flabel" for="f-email">Email Address <span aria-hidden="true" style="color:#ef4444;">*</span></label>
+              <input type="email" id="f-email" name="email" class="finput" placeholder="john@example.com" autocomplete="email" required aria-required="true" aria-describedby="err-email">
+              <span class="ferr" id="err-email" role="alert" aria-live="polite"></span>
+            </div>
+
+            <!-- Property Address -->
+            <div class="mb-4">
+              <label class="flabel" for="f-address">Property Address <span aria-hidden="true" style="color:#ef4444;">*</span></label>
+              <input type="text" id="f-address" name="address" class="finput" placeholder="123 Oak Lane, Collegeville, PA 19426" autocomplete="street-address" required aria-required="true" aria-describedby="err-address">
+              <span class="ferr" id="err-address" role="alert" aria-live="polite"></span>
+            </div>
+
+            <!-- Service dropdown -->
+            <div class="mb-4">
+              <label class="flabel" for="f-service">Service Needed <span aria-hidden="true" style="color:#ef4444;">*</span></label>
+              <select id="f-service" name="service" class="finput finput-select" required aria-required="true" aria-describedby="err-service">
+                <option value="" disabled selected>Select a service…</option>
+                <option value="Residential Sealcoating">Residential Sealcoating</option>
+                <option value="Commercial Sealcoating">Commercial Sealcoating</option>
+                <option value="Crack Filling">Crack Filling</option>
+                <option value="Line Striping">Line Striping</option>
+                <option value="Other">Other</option>
+              </select>
+              <span class="ferr" id="err-service" role="alert" aria-live="polite"></span>
+            </div>
+
+            <!-- Message -->
+            <div class="mb-6">
+              <label class="flabel" for="f-message">
+                Message / Details
+                <span style="color:#555;font-weight:400;text-transform:none;letter-spacing:0;font-size:.72rem;margin-left:4px;">(optional)</span>
+              </label>
+              <textarea id="f-message" name="message" class="finput" rows="4" placeholder="Describe your project — driveway size, parking lot, specific concerns, preferred dates, etc." aria-describedby="err-message" style="resize:vertical;min-height:110px;"></textarea>
+              <span class="ferr" id="err-message" role="alert" aria-live="polite"></span>
+            </div>
+
+            <!-- Form-level status (rate limit / network errors) -->
+            <div id="form-status" role="alert" aria-live="polite" style="margin-bottom:.75rem;font-family:'DM Sans',sans-serif;font-size:.875rem;line-height:1.5;"></div>
+
+            <button type="submit" id="submit-btn" class="btn-primary" style="width:100%;justify-content:center;">
+              <span id="btn-text">Send Estimate Request</span>
+              <svg id="btn-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              <svg id="btn-spinner" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true" style="display:none;animation:spin 800ms linear infinite;"><path d="M12 2a10 10 0 0 1 10 10" stroke-linecap="round" stroke-opacity=".9"/><circle cx="12" cy="12" r="10" stroke-opacity=".2"/></svg>
+            </button>
+
+            <p class="font-body text-asphalt-400 text-xs text-center mt-4" style="line-height:1.6;">We respond within 24 hours. No spam, no obligation. <span aria-hidden="true">·</span> <a href="tel:6106358830" style="color:#FFD100;text-decoration:none;font-weight:600;">610-635-8830</a></p>
+          </form>
+
         </div>
       </div>
 
@@ -338,6 +413,111 @@
   b.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})});
 
 </script>
-<script src="https://link.msgsndr.com/js/form_embed.js"></script>
+<script>
+(function () {
+  var form = document.getElementById('contact-form');
+  if (!form) return;
+
+  var submitBtn  = document.getElementById('submit-btn');
+  var btnText    = document.getElementById('btn-text');
+  var btnArrow   = document.getElementById('btn-arrow');
+  var btnSpinner = document.getElementById('btn-spinner');
+  var formStatus = document.getElementById('form-status');
+  var formEl     = document.getElementById('contact-form');
+  var successEl  = document.getElementById('form-success');
+
+  var EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  function val(id) { return document.getElementById(id).value.trim(); }
+
+  function setErr(inputId, errId, msg) {
+    var inp = document.getElementById(inputId);
+    var err = document.getElementById(errId);
+    if (msg) { inp.classList.add('err'); err.textContent = msg; }
+    else      { inp.classList.remove('err'); err.textContent = ''; }
+    return !!msg;
+  }
+
+  function validate() {
+    var bad = false;
+    var name    = val('f-name');
+    var phone   = val('f-phone');
+    var email   = val('f-email');
+    var address = val('f-address');
+    var service = val('f-service');
+
+    bad = setErr('f-name',    'err-name',    name    ? '' : 'Please enter your full name.') || bad;
+    var digits = phone.replace(/\D/g, '');
+    bad = setErr('f-phone',   'err-phone',   !phone ? 'Please enter your phone number.' : digits.length < 10 ? 'Please enter a valid 10-digit phone number.' : '') || bad;
+    bad = setErr('f-email',   'err-email',   !email ? 'Please enter your email address.' : !EMAIL_RE.test(email) ? 'Please enter a valid email address.' : '') || bad;
+    bad = setErr('f-address', 'err-address', address ? '' : 'Please enter the property address.') || bad;
+    bad = setErr('f-service', 'err-service', service ? '' : 'Please select a service.') || bad;
+
+    return !bad;
+  }
+
+  function setLoading(on) {
+    submitBtn.disabled = on;
+    btnText.textContent = on ? 'Sending…' : 'Send Estimate Request';
+    btnArrow.style.display   = on ? 'none' : '';
+    btnSpinner.style.display = on ? ''     : 'none';
+  }
+
+  function showStatus(msg, isError) {
+    formStatus.textContent  = msg;
+    formStatus.style.color  = isError ? '#f87171' : '#4ade80';
+    formStatus.style.padding = msg ? '.5rem .75rem' : '0';
+    formStatus.style.background = msg ? (isError ? 'rgba(239,68,68,.08)' : 'rgba(74,222,128,.08)') : '';
+    formStatus.style.borderRadius = '6px';
+  }
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    showStatus('', false);
+
+    if (!validate()) {
+      var firstErr = form.querySelector('.finput.err');
+      if (firstErr) firstErr.focus();
+      return;
+    }
+
+    setLoading(true);
+
+    var payload = {
+      name:    val('f-name'),
+      phone:   val('f-phone'),
+      email:   val('f-email'),
+      address: val('f-address'),
+      service: val('f-service'),
+      message: document.getElementById('f-message').value.trim(),
+      website: document.getElementById('f-website').value,
+    };
+
+    fetch('/api/submit-form', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload),
+    })
+      .then(function (res) { return res.json().then(function (data) { return { ok: res.ok, status: res.status, data: data }; }); })
+      .then(function (r) {
+        if (r.ok && r.data.success) {
+          formEl.style.display  = 'none';
+          successEl.style.display = '';
+          successEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        } else if (r.status === 429) {
+          showStatus('Too many requests — please wait a few minutes, or call us at 610-635-8830.', true);
+          setLoading(false);
+        } else {
+          showStatus(r.data.error || 'Something went wrong. Please try again or call 610-635-8830.', true);
+          setLoading(false);
+        }
+      })
+      .catch(function () {
+        showStatus('Network error — please check your connection and try again, or call 610-635-8830.', true);
+        setLoading(false);
+      });
+  });
+}());
+</script>
 </body>
 </html>
