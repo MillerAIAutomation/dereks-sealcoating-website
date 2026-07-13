@@ -235,9 +235,9 @@
 <section id="crack-sealing" class="svc-section">
   <div class="max-w-7xl mx-auto px-5">
     <div class="grid md:grid-cols-2 gap-12 items-start">
-      <div style="border-radius:12px;overflow:hidden;aspect-ratio:4/3;background:#1A1A1A;order:-1;md:order:0;">
-        <video autoplay muted loop playsinline poster="images/service-crack-sealing-poster.jpeg" class="w-full h-full object-cover" style="display:block;">
-          <source src="images/service-crack-sealing.mp4" type="video/mp4">
+      <div style="border-radius:12px;overflow:hidden;aspect-ratio:4/3;background:#1A1A1A;order:-1;">
+        <video id="crack-video" muted loop playsinline preload="none" poster="images/service-crack-sealing-poster.jpeg" class="w-full h-full object-cover" style="display:block;">
+          <source data-src="images/service-crack-sealing.mp4" type="video/mp4">
         </video>
       </div>
       <div>
@@ -546,6 +546,20 @@
   var b=document.getElementById('btt');
   window.addEventListener('scroll',function(){b.classList.toggle('vis',window.scrollY>400)},{passive:true});
   b.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})});
+  // Lazy-load + autoplay the crack-sealing video once it nears the viewport
+  var crackVideo=document.getElementById('crack-video');
+  if(crackVideo&&'IntersectionObserver'in window){
+    var vObserver=new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          var src=crackVideo.querySelector('source');
+          if(src.dataset.src){src.src=src.dataset.src;delete src.dataset.src;crackVideo.load();crackVideo.play().catch(function(){});}
+          vObserver.unobserve(crackVideo);
+        }
+      });
+    },{rootMargin:'200px'});
+    vObserver.observe(crackVideo);
+  }
 </script>
 </body>
 </html>

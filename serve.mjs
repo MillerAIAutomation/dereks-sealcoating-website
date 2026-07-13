@@ -17,6 +17,9 @@ const mime = {
   '.svg': 'image/svg+xml',
   '.ico': 'image/x-icon',
   '.webp': 'image/webp',
+  '.mp4': 'video/mp4',
+  '.xml': 'application/xml',
+  '.txt': 'text/plain',
 };
 
 createServer(async (req, res) => {
