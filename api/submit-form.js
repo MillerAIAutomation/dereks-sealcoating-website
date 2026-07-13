@@ -1,5 +1,13 @@
-const { Resend } = require('resend');
+const nodemailer = require('nodemailer');
 const { kv } = require('@vercel/kv');
+
+const transporter = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: process.env.GMAIL_USER,
+    pass: process.env.GMAIL_APP_PASSWORD,
+  },
+});
 
 const ALLOWED_ORIGINS = [
   'https://dereksealcoating.com',
@@ -139,19 +147,17 @@ module.exports = async function handler(req, res) {
       console.error('[submit-form] KV backup save error:', kvSaveErr.message);
     }
 
-    // Send email notification via Resend
-    const resend = new Resend(process.env.RESEND_API_KEY);
-
-    const { error: emailError } = await resend.emails.send({
-      from: "Derek's Sealcoating <noreply@dereksealcoating.com>",
-      to: ['dereksealcoating@gmail.com'],
-      subject: `New Estimate Request — ${name} (${service})`,
-      html: buildEmailHtml({ name, phone, email, address, service, message }, ts),
-      reply_to: email,
-    });
-
-    if (emailError) {
-      console.error('[submit-form] Resend error:', JSON.stringify(emailError));
+    // Send email notification via Gmail SMTP
+    try {
+      await transporter.sendMail({
+        from: `"Derek's Sealcoating" <${process.env.GMAIL_USER}>`,
+        to: 'dereksealcoating@gmail.com',
+        subject: `New Estimate Request — ${name} (${service})`,
+        html: buildEmailHtml({ name, phone, email, address, service, message }, ts),
+        replyTo: email,
+      });
+    } catch (emailErr) {
+      console.error('[submit-form] Gmail send error:', emailErr.message);
       // Backup was already saved — tell the user but don't lose their submission
       return res.status(500).json({
         error: 'Your request was received but our notification system hit a snag. Please call us at 610-635-8830 to confirm.',
