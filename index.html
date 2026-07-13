@@ -63,7 +63,7 @@
     @media(max-width:767px){
       #hamburger{display:flex}
       #nav-links{position:absolute;top:100%;left:0;right:0;background:#0A0A0A;border-bottom:2px solid #FFD100;flex-direction:column;padding:1rem 1.25rem 1.5rem;gap:0;transform:translateY(-8px);opacity:0;pointer-events:none;transition:transform 280ms cubic-bezier(.34,1.56,.64,1),opacity 200ms ease}
-      #nav-toggle:checked~nav #nav-links{transform:translateY(0);opacity:1;pointer-events:auto}
+      #nav-toggle:checked~nav #nav-links{display:flex;transform:translateY(0);opacity:1;pointer-events:auto}
       #nav-links a{padding:.75rem 0;border-bottom:1px solid rgba(255,255,255,.06);font-size:1rem}
     }
     /* Buttons */
