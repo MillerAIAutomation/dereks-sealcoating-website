@@ -511,6 +511,9 @@
       .then(function (res) { return res.json().then(function (data) { return { ok: res.ok, status: res.status, data: data }; }); })
       .then(function (r) {
         if (r.ok && r.data.success) {
+          if (typeof gtag === 'function') {
+            gtag('event', 'conversion', { 'send_to': 'AW-18392230923/tc5ZCNTIguUcEIvYjMJE' });
+          }
           formEl.style.display  = 'none';
           successEl.style.display = '';
           successEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
